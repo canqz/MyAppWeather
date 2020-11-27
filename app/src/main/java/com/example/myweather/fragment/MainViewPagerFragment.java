@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myweather.R;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class MainViewPagerFragment extends Fragment{
     Context context;
@@ -51,9 +59,20 @@ public class MainViewPagerFragment extends Fragment{
             String result = null;
             if (url == null) {
                 Toast.makeText(context, "输入的城市为空", Toast.LENGTH_SHORT).show();
-
+//                Log.i("LWT","HELLO---1");
             }else{
-
+                try {
+//                    Log.i("LWT","HELLO---2");
+                    OkHttpClient client = new OkHttpClient();
+                    Request request = new Request.Builder()
+                            .url(url)
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    result = response.body().toString();
+//                    Log.i("LWT","HELLO---3");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             return result;
         }
@@ -62,6 +81,7 @@ public class MainViewPagerFragment extends Fragment{
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+            Log.i("LWT",result);
         }
     }
 }
