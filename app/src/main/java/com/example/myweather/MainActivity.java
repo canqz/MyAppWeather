@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addIv = findViewById(R.id.main_add_im);
         moreIv = findViewById(R.id.main_more_iv);
         pointLl = findViewById(R.id.main_point_ll);
+
     }
 
     @Override
