@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/main_fg_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp">
+
+            <TextView
+                android:id="@+id/main_fg_temp_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22℃"
+                android:textSize="50sp" />
+
+            <ImageView
+                android:id="@+id/main_fg_today_whether_im"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/icon" />
+
+            <TextView
+                android:id="@+id/main_fg_address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_fg_temp_tv"
+                android:layout_marginTop="10dp"
+                android:text="北京"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/main_fg_whether_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_fg_address_tv"
+                android:text="晴"
+                android:textSize="30sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_fg_whether_tv"
+                android:layout_marginTop="10sp">
+
+                <TextView
+                    android:id="@+id/main_fg_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2020-11-27"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/main_fg_wind_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_fg_date_tv"
+                    android:layout_marginTop="10sp"
+                    android:text="东风3-4级"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/main_line1"
+                    android:layout_width="2sp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/main_fg_wind_tv"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@id/main_fg_wind_tv"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/main_fg_temp_range_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/main_line1"
+                    android:layout_toRightOf="@id/main_line1"
+                    android:text="31℃-15℃"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/main_fg_future_whether_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_fg_main_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/main_view_pager_bg"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_fg_index"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_fg_future_whether_ll"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/main_view_pager_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/icon_car"
+                    android:gravity="center"
+                    android:text="洗车指数" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/icon_cloth"
+                    android:gravity="center"
+                    android:text="穿衣指数" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/icon_ganmao"
+                    android:gravity="center"
+                    android:text="感冒指数" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/icon_sport"
+                    android:gravity="center"
+                    android:text="运动指数" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/icon_light"
+                    android:gravity="center"
+                    android:text="紫外线指数" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="穿衣指数"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
